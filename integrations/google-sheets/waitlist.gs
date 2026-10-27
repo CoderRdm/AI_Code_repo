@@ -3,7 +3,7 @@
 
 const SHEET_NAME = "Waitlist";
 const HEADER = ["Signed up (UTC)", "Email", "Note", "Source"];
-const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const EMAIL = /^[a-z0-9._%][a-z0-9._%+-]*@[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}$/i;
 
 function doPost(e) {
   const secret = PropertiesService.getScriptProperties().getProperty("WAITLIST_SECRET");
@@ -36,7 +36,7 @@ function doPost(e) {
         .findNext();
       if (found) return json({ ok: true, duplicate: true });
     }
-    sheet.appendRow([new Date().toISOString(), email, plain(body.note, 1000), plain(body.source, 40)]);
+    sheet.appendRow([new Date().toISOString(), plain(email, 254), plain(body.note, 1000), plain(body.source, 40)]);
     return json({ ok: true });
   } finally {
     lock.releaseLock();

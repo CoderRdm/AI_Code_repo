@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const EMAIL = /^[a-z0-9._%][a-z0-9._%+-]*@[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}$/i;
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_PER_WINDOW = 5;
 

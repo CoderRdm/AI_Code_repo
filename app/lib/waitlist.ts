@@ -1,6 +1,6 @@
 export type WaitlistEntry = { email: string; note?: string; source?: string; company?: string };
 
-const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const EMAIL = /^[a-z0-9._%][a-z0-9._%+-]*@[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}$/i;
 
 export function isEmail(value: string) {
   return EMAIL.test(value.trim());
