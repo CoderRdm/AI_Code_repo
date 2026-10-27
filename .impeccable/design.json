@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T15:20:00+05:30",
+  "title": "Design System: cuckyouleet",
+  "extensions": {
+    "colorMeta": {
+      "lime": { "role": "primary", "displayName": "Phosphor Lime", "tonalRamp": ["#86d327", "#a6ec3e", "#ccff74"] },
+      "paper": { "role": "neutral", "displayName": "Dot Paper", "tonalRamp": ["#e3ebd2", "#eef3e2", "#fbfdf6"] },
+      "ink": { "role": "neutral", "displayName": "Deep Ink", "tonalRamp": ["#10240b", "#3d5634", "#5f7556"] },
+      "win": { "role": "neutral", "displayName": "Editor Night", "tonalRamp": ["#080f07", "#0c160a", "#121f0f", "#22341d"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Pixel Display", "purpose": "Hero headline, wordmark, report numerals." },
+      "heading": { "displayName": "Pixel Heading", "purpose": "Section headings." },
+      "body": { "displayName": "Body", "purpose": "All prose and UI copy." },
+      "code": { "displayName": "Code", "purpose": "Code, terminal, file names only." }
+    },
+    "shadows": [
+      { "name": "button", "value": "inset 0 -4px 0 rgb(16 36 11 / 0.22), 0 6px 14px -6px rgb(16 36 11 / 0.45)", "purpose": "Primary button depth; compresses on press." },
+      { "name": "window", "value": "0 0 0 3px #10240b, 0 0 0 5px #5bff3a, 0 0 34px 4px rgb(91 255 58 / 0.32), 0 30px 60px -20px rgb(16 36 11 / 0.55)", "purpose": "Editor window: ink ring, CRT rim, glow, lift." },
+      { "name": "report", "value": "0 24px 40px -12px rgb(0 0 0 / 0.6)", "purpose": "Report card floating over the editor." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "All entrances and state changes." },
+      { "name": "message-in", "value": "360ms ease-out, translateY(6px) + fade", "purpose": "Chat, terminal output." },
+      { "name": "report-in", "value": "420ms ease-out, translateY(16px) + fade", "purpose": "Session report card." }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "1080px" },
+      { "name": "mobile", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action style: joining the list, nav CTA.",
+      "html": "<button class=\"ds-btn\">Join the early-access list</button>",
+      "css": ".ds-btn{display:inline-flex;padding:14px 22px 13px;border:2px solid #10240b;border-radius:10px;background:#a6ec3e;color:#10240b;font:750 1rem/1.2 Archivo,Arial,sans-serif;box-shadow:inset 0 -4px 0 rgb(16 36 11/.22),0 6px 14px -6px rgb(16 36 11/.45);cursor:pointer;transition:transform 120ms cubic-bezier(.16,1,.3,1),background-color 160ms}.ds-btn:hover{background:#ccff74}.ds-btn:active{transform:translateY(2px)}"
+    },
+    {
+      "name": "Email Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Waitlist email field.",
+      "html": "<input class=\"ds-input\" type=\"email\" placeholder=\"you@college.edu\">",
+      "css": ".ds-input{padding:13px 16px;border:2px solid #10240b;border-radius:10px;background:#fbfdf6;color:#10240b;font:400 1rem Archivo,Arial,sans-serif}.ds-input::placeholder{color:#5f7556}.ds-input:focus-visible{outline:3px solid #86d327;outline-offset:2px}"
+    },
+    {
+      "name": "Tag Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "What a round includes.",
+      "html": "<span class=\"ds-chip\">Real repos</span>",
+      "css": ".ds-chip{display:inline-block;padding:4px 12px;border:1.5px solid rgb(16 36 11/.16);border-radius:999px;background:#eef3e2;color:#3d5634;font:600 .875rem Archivo,Arial,sans-serif}"
+    },
+    {
+      "name": "Nav Bar",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Sticky outlined bar.",
+      "html": "<nav class=\"ds-nav\"><b>cuckyouleet</b><a href=\"#\">How it works</a><a href=\"#\">Try one</a></nav>",
+      "css": ".ds-nav{display:flex;gap:24px;align-items:center;padding:10px 16px;border:2px solid #10240b;border-radius:14px;background:rgb(238 243 226/.92);font:600 .9375rem Archivo,Arial,sans-serif}.ds-nav b{font:400 1.9rem 'Jersey 10',monospace;margin-right:auto}.ds-nav a{color:#3d5634;text-decoration:none}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The round, shown working",
+    "overview": "A green arcade palette set out like a practical product page. Pale dot-grid paper, ink outlines and pixel display type frame one dark editor window with a lime CRT glow, where a sample debugging session plays itself.",
+    "keyCharacteristics": ["Dot-grid paper", "Lime as the only fill", "Pixel display type", "Glowing editor window", "Demonstration over description"],
+    "rules": [
+      { "name": "One Fill Rule", "body": "Lime is the only saturated fill on paper; text on lime is always ink.", "section": "colors" },
+      { "name": "Glow Is Light", "body": "Only screens glow: the editor window and the try-one CRT.", "section": "elevation" }
+    ],
+    "dos": ["Show the product working", "Label demo data as a sample", "Code in JetBrains Mono only"],
+    "donts": ["No traction numbers, testimonials or logos", "No arcade-cabinet hardware", "No eyebrow labels or zero-blur offset shadows"]
+  }
+}

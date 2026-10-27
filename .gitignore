@@ -1,0 +1,8 @@
+node_modules
+.next
+next-env.d.ts
+*.tsbuildinfo
+.impeccable/review
+.env*
+!.env.example
+reference-arcade.jpeg
